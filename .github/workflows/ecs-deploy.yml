@@ -3,7 +3,7 @@ name: Deploy to ECS
 on:
   push:
     branches:
-      - main
+      - main  # Trigger on push to main branch (or the appropriate branch)
 
 jobs:
   build:
@@ -29,11 +29,11 @@ jobs:
         docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPO_NAME }}:latest
 
     - name: Deploy to ECS
-      uses: jakejarvis/ecs-deploy-action@v1
+      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
-        cluster: "cuteblog-cluster"
-        service: "cuteblog-service"
-        task-definition: "cuteblog-task"
+        cluster: "cuteblog-cluster"  # Replace with your ECS cluster name
+        service: "cuteblog-service"  # Replace with your ECS service name
+        task-definition: "cuteblog-task"  # Replace with your task definition ARN or name
         aws-region: "${{ secrets.AWS_REGION }}"
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
