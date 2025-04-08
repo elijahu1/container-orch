@@ -1,4 +1,4 @@
-# Ignore AWS CLI files
-/aws/
-/awscliv2.zip/
+# Ignore AWS CLI files and directories
+awscliv2.zip
+aws/
 
