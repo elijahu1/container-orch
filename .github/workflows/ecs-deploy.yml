@@ -57,7 +57,7 @@ jobs:
       with:
         cluster: "cuteblog-cluster"
         service: "cuteblog-service"
-        task-definition: "cuteblog-task"  # Ensure this file exists
+        task-definition:  "container-orch/cuteblog-task.json"  # Ensure this file exists
         force-new-deployment: true  # Optional, forces ECS to use a new deployment
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
