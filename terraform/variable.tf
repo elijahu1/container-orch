@@ -1,27 +1,71 @@
 variable "region" {
-  description = "AWS region to deploy resources in"
+  description = "AWS region"
   default     = "us-east-1"
 }
 
-variable "subnets" {
-  description = "List of subnet IDs for ECS service"
-  type        = list(string)
-  default     = ["0.0.0.0/0"]  # Using any subnet for this example (adjust for production environments)
+variable "vpc_cidr" {
+  description = "CIDR block for VPC"
+  default     = "10.0.0.0/16"
 }
 
-variable "cpu" {
-  description = "The CPU allocation for the task"
-  default     = "256"  # Adjust as needed
+variable "subnet_cidr_1" {
+  description = "CIDR block for subnet 1"
+  default     = "10.0.1.0/24"
 }
 
-variable "memory" {
-  description = "The memory allocation for the task"
-  default     = "512"  # Adjust as needed
+variable "subnet_cidr_2" {
+  description = "CIDR block for subnet 2"
+  default     = "10.0.2.0/24"
 }
 
-variable "ecr_image_url" {
-  description = "The URL of the Docker image in ECR"
+variable "az_1" {
+  description = "Availability Zone for subnet 1"
+  default     = "us-east-1a"
+}
+
+variable "az_2" {
+  description = "Availability Zone for subnet 2"
+  default     = "us-east-1b"
+}
+
+variable "cluster_name" {
+  description = "EKS Cluster Name"
+  default     = "cuteblog-cluster"
+}
+
+variable "node_group_name" {
+  description = "EKS Node Group Name"
+  default     = "cuteblog-node-group"
+}
+
+variable "desired_size" {
+  description = "Desired size for node group"
+  default     = 2
+}
+
+variable "max_size" {
+  description = "Maximum size for node group"
+  default     = 3
+}
+
+variable "min_size" {
+  description = "Minimum size for node group"
+  default     = 1
+}
+
+variable "instance_types" {
+  description = "Instance types for the worker nodes"
+  default     = ["t3.medium"]
+}
+
+variable "ssh_cidr" {
+  description = "CIDR block allowed for SSH access"
   type        = string
-  default     = "279538561166.dkr.ecr.us-east-1.amazonaws.com/elijahu/cuteblog-flask-image"  # This will be provided dynamically via GitHub Secrets
+  default     = "0.0.0.0/0"  # Restrict to your IP in production
 }
 
+variable "ssh_key_name" {
+  description = "Name of the EC2 key pair for SSH access"
+  type        = string
+  default     = ""  # Set to your key pair name (e.g., "my-key")
+}

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cuteblog-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cuteblog
+  template:
+    metadata:
+      labels:
+        app: cuteblog
+    spec:
+      containers:
+      - name: cuteblog-container
+        image: 279538561166.dkr.ecr.us-east-1.amazonaws.com/elijahu/cuteblog-flask-image:latest
+        ports:
+        - containerPort: 5000

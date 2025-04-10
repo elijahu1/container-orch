@@ -1,7 +1,7 @@
 {
   "version": 4,
   "terraform_version": "1.10.2",
-  "serial": 54,
+  "serial": 47,
   "lineage": "c667da77-00ef-040f-fc53-fc30a5070231",
   "outputs": {},
   "resources": [
@@ -197,29 +197,29 @@
           "status": "tainted",
           "schema_version": 0,
           "attributes": {
-            "ami_type": null,
-            "arn": null,
-            "capacity_type": null,
+            "ami_type": "CUSTOM",
+            "arn": "arn:aws:eks:us-east-1:279538561166:nodegroup/cuteblog-cluster/cuteblog-node-group/e0cb1040-4f25-0afb-cd20-8d235e0454af",
+            "capacity_type": "ON_DEMAND",
             "cluster_name": "cuteblog-cluster",
-            "disk_size": null,
+            "disk_size": 0,
             "force_update_version": null,
             "id": "cuteblog-cluster:cuteblog-node-group",
-            "instance_types": null,
-            "labels": null,
+            "instance_types": [],
+            "labels": {},
             "launch_template": [
               {
                 "id": "lt-0a4c5224ff8c5b877",
-                "name": "",
-                "version": "$Latest"
+                "name": "eks-node-template20250410151007855900000001",
+                "version": "4"
               }
             ],
             "node_group_name": "cuteblog-node-group",
-            "node_group_name_prefix": null,
-            "node_repair_config": null,
+            "node_group_name_prefix": "",
+            "node_repair_config": [],
             "node_role_arn": "arn:aws:iam::279538561166:role/eks-worker-role",
-            "release_version": null,
+            "release_version": "ami-00eecb82e039ee70c",
             "remote_access": [],
-            "resources": null,
+            "resources": [],
             "scaling_config": [
               {
                 "desired_size": 2,
@@ -227,7 +227,7 @@
                 "min_size": 1
               }
             ],
-            "status": null,
+            "status": "CREATING",
             "subnet_ids": [
               "subnet-0174ea77778641729",
               "subnet-0cd45c9c81d26e5c8"
@@ -240,8 +240,13 @@
             },
             "taint": [],
             "timeouts": null,
-            "update_config": null,
-            "version": null
+            "update_config": [
+              {
+                "max_unavailable": 1,
+                "max_unavailable_percentage": 0
+              }
+            ],
+            "version": ""
           },
           "sensitive_attributes": [],
           "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozNjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInVwZGF0ZSI6MzYwMDAwMDAwMDAwMH19",
@@ -465,14 +470,14 @@
             "hibernation_options": [],
             "iam_instance_profile": [],
             "id": "lt-0a4c5224ff8c5b877",
-            "image_id": "ami-035b9fcdcadc5ef11",
+            "image_id": "ami-00eecb82e039ee70c",
             "instance_initiated_shutdown_behavior": "",
             "instance_market_options": [],
             "instance_requirements": [],
             "instance_type": "t3.medium",
             "kernel_id": "",
             "key_name": "",
-            "latest_version": 5,
+            "latest_version": 4,
             "license_specification": [],
             "maintenance_options": [],
             "metadata_options": [],
@@ -502,7 +507,7 @@
                 "primary_ipv6": "",
                 "private_ip_address": "",
                 "security_groups": [
-                  "sg-0d85fdfb40efc0319"
+                  "sg-03238e4e4f31ab74c"
                 ],
                 "subnet_id": ""
               }
@@ -641,8 +646,8 @@
         {
           "schema_version": 1,
           "attributes": {
-            "arn": "arn:aws:ec2:us-east-1:279538561166:security-group/sg-0d85fdfb40efc0319",
-            "description": "Allow EKS and SSH access",
+            "arn": "arn:aws:ec2:us-east-1:279538561166:security-group/sg-03238e4e4f31ab74c",
+            "description": "SSH access to EKS worker nodes",
             "egress": [
               {
                 "cidr_blocks": [
@@ -658,13 +663,13 @@
                 "to_port": 0
               }
             ],
-            "id": "sg-0d85fdfb40efc0319",
+            "id": "sg-03238e4e4f31ab74c",
             "ingress": [
               {
                 "cidr_blocks": [
                   "0.0.0.0/0"
                 ],
-                "description": "SSH Access",
+                "description": "",
                 "from_port": 22,
                 "ipv6_cidr_blocks": [],
                 "prefix_list_ids": [],
@@ -672,19 +677,6 @@
                 "security_groups": [],
                 "self": false,
                 "to_port": 22
-              },
-              {
-                "cidr_blocks": [
-                  "10.0.0.0/16"
-                ],
-                "description": "EKS Control Plane to Worker Nodes",
-                "from_port": 0,
-                "ipv6_cidr_blocks": [],
-                "prefix_list_ids": [],
-                "protocol": "-1",
-                "security_groups": [],
-                "self": false,
-                "to_port": 0
               }
             ],
             "name": "eks-worker-sg",
