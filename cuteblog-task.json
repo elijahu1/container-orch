@@ -1,0 +1,18 @@
+{
+  "family": "cuteblog-task",
+  "containerDefinitions": [
+    {
+      "name": "cuteblog-container",
+      "image": "279538561166.dkr.ecr.us-east-1.amazonaws.com/elijahu/cuteblog-flask-image:latest",
+      "memory": 512,
+      "cpu": 256,
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 5000,
+          "hostPort": 5000
+        }
+      ]
+    }
+  ]
+}
