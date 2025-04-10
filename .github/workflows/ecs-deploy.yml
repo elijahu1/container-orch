@@ -57,8 +57,9 @@ jobs:
       with:
         cluster: "cuteblog-cluster"
         service: "cuteblog-service"
-        task-definition: "cuteblog-task"
-        aws-region: ${{ secrets.AWS_REGION }}
+        task-definition: "cuteblog-task"  # Ensure this file exists
+        force-new-deployment: true  # Optional, forces ECS to use a new deployment
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: ${{ secrets.AWS_REGION }}  # Region should be set via environment variables
