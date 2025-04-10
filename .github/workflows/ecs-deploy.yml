@@ -1,3 +1,4 @@
+
 name: Deploy to ECS
 
 on:
@@ -27,9 +28,12 @@ jobs:
       run: |
         docker build -t ${{ secrets.ECR_REPO_NAME }}:latest .
 
-    - name: Push Docker image to ECR
+    - name: Tag Docker image for ECR
       run: |
         docker tag ${{ secrets.ECR_REPO_NAME }}:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPO_NAME }}:latest
+
+    - name: Push Docker image to ECR
+      run: |
         docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPO_NAME }}:latest
 
     - name: Deploy to ECS
