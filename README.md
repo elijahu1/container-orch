@@ -51,7 +51,7 @@ This project demonstrates how to deploy a Flask web application using a modern C
 3. **Create ECS Task & Service**: Set up ECS task definitions and services for Fargate.
 4. **Automate with GitHub Actions**: Create a GitHub Actions workflow for continuous integration and deployment.
 
-For full setup instructions and examples, check out the [blog post](#) and [GitHub Actions Workflow](#) files.
+For full setup instructions and examples, check out the [blog post](https://elijahu.me/portfolio/cicd-container-orch) and [GitHub Actions Workflow](https://github.com/elijahu1/container-orch/actions) files.
 
 ---
 
@@ -76,11 +76,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🤝 Support
 
-If you need any help or have questions, feel free to reach out to us via [GitHub Issues](https://github.com/yourusername/your-repo-name/issues).
+If you need any help or have questions, feel free to reach out to us via [GitHub Issues](https://github.com/elijahu1/container-orch/issues).
 
 ---
 
 ## 🧑‍💻 Acknowledgments
 
 - Special thanks to the open-source community for providing valuable resources for this project.
-- Shoutout to [@random-contributor](https://github.com/random-contributor) for the initial template.
+- Shoutout to [@mesinkasir](https://github.com/mesinkasir) for the initial template.
