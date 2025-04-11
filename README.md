@@ -1,63 +1,86 @@
-# Cuteblog Phyton Flask SqlAlchemy
+# CI/CD Flask App Deployment with Docker, AWS, and GitHub Actions
 
-A new generation for phyton flask blog with cute blog.
-including sqlalchemy for update edit and delete content
+## 🚀 Project Overview
 
-<a href="https://www.buymeacoffee.com/axcora"><img width="240" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIA9HMwkK8kr7uRwVNxnhXsLQsJHxQQYVSzqCAaK58OpJOiTlzbIX7eEwS_VpJ3oEG-xrmVEl2WKqGvB_o-KjyBGTbbjFHM_bN2Jce9g3FTnt2ZJViwcvB9DHPOKPEMCl7jTQRVWKPw_ETloH7_CK8Xr09SSNNx22xnfGjViwdEsGtR-yGrLmr-JUGHA/s1090/bmc-button.png"/></a>
+This project demonstrates how to deploy a Flask web application using a modern CI/CD pipeline. The infrastructure leverages Docker for containerization, AWS ECS for container orchestration, and GitHub Actions for automation. This pipeline ensures efficient, scalable, and secure deployment for web apps.
 
+## 🎯 Features
+- **Flask**: Lightweight Python web framework.
+- **Docker**: Containerized the application for consistent environment.
+- **AWS ECS (Fargate)**: Scalable container orchestration with Amazon ECS.
+- **GitHub Actions**: CI/CD automation for building, testing, and deploying the app.
+- **Secure & Scalable**: Uses IAM roles for secure AWS interactions and scaling through ECS.
 
-Installation Documentation : 
-[https://www.hockeycomputindo.com/2022/04/phyton-flask-blog-seo-template-free.html →](https://www.hockeycomputindo.com/2022/04/phyton-flask-blog-seo-template-free.html)
+## 🛠️ Tools & Technologies
+- **Flask**: A micro web framework for Python.
+- **Docker**: Containerization platform to package the app.
+- **AWS ECS**: Elastic Container Service for deploying containers.
+- **AWS ECR**: Elastic Container Registry for storing Docker images.
+- **GitHub Actions**: CI/CD automation.
+- **Terraform** *(Optional)*: Infrastructure-as-code for AWS resources.
 
-Test drive a demo : 
-[https://cuteflask.axcora.my.id →](https://cuteflask.axcora.my.id/)
+## 📦 Installation
 
-Play video : [https://youtu.be/V0hCp4SMSfw →](https://youtu.be/V0hCp4SMSfw)
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/your-repo-name.git
+    cd your-repo-name
+    ```
 
-![cuteblog for phyton flask blog ](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgWssVzJHcSm7F22gHjeDLIFLDJlTGc8JoXm8TQLzche0hS7Zg5aoPaHzZkwVDnum0APAHOr1R6PGVSRRY7kWg_2h0XQy1e_iKgMGhFKBQEdy2_aAzPk02bqELkbKBMLqPCvIE6sMsBh2ENji-PeftctMhzs-UIc6t7xe7dKQVUqcbIw47ia2HYsXeaBw/s1920/phyton%20flask%20blog%20seo%20free%20download%20source%20code%20gratis%20(1).jpg)
+2. Install dependencies for the Flask app:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Installation Documentation : 
-[https://www.hockeycomputindo.com/2022/04/phyton-flask-blog-seo-template-free.html →](https://www.hockeycomputindo.com/2022/04/phyton-flask-blog-seo-template-free.html)
+3. Build the Docker image:
+    ```bash
+    docker build -t flask-app .
+    ```
 
-Test drive a demo : 
-[https://cuteflask.axcora.my.id →](https://cuteflask.axcora.my.id/)
+4. Run the Flask app locally:
+    ```bash
+    docker run -p 5000:5000 flask-app
+    ```
 
+5. Follow the steps in the [CI/CD Pipeline section](#cicd-pipeline-setup) to set up the pipeline.
 
--------------------------
+## 📝 CI/CD Pipeline Setup
 
-A display sample
+1. **Dockerize the Flask app**: Create a `Dockerfile` to build the app image.
+2. **Push image to AWS ECR**: Use AWS CLI to authenticate and push your image.
+3. **Create ECS Task & Service**: Set up ECS task definitions and services for Fargate.
+4. **Automate with GitHub Actions**: Create a GitHub Actions workflow for continuous integration and deployment.
 
+For full setup instructions and examples, check out the [blog post](#) and [GitHub Actions Workflow](#) files.
 
-![cuteblog for phyton flask blog ](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhC1BSMq5-Ig-TH8drTFYHYyodsJeM-FCkohcfi2ySTXHKJKL86h-xuWhZuCn6r0k2VzWmySoVMMIj0TvSs0JP2BdMr0BTYGgcFeabLFFQdQ8UlFwi1m6DxXkTcrvy0LZmXsQ86TXvh_c-jW41HlKLp9_XdGJhckFa1aaapH6ZY1dvaQ11-ywH9-EuDVA/s2107/phyton%20flask%20blog%20seo%20free%20download%20source%20code%20gratis%20(9).png)
+---
 
-Homepage area
+## 📖 Contribution
 
-![cuteblog for phyton flask blog ](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgyCU3y-Rv73jGThRGaX4FZw2RceUaMfrNzqpk9JUvj5rMuXlAk06MsthLY8iBu2rJp2MmtjU7ZWDLKhVlWLa_UPPw2nACUJlCnlXTQCTptEGS9tSUhRhnKErckV6mYKFpbK6sshD9fsJZTQOUMiDnHo4RFCZxidWBEcBvfkjaaIjje3PxASSIj2BXdJw/s1349/phyton%20flask%20blog%20seo%20free%20download%20source%20code%20gratis%20(8).png)
+We welcome contributions! If you want to improve this project, feel free to submit a pull request.
 
-Article page
+### How to Contribute:
+1. Fork this repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit them (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Open a pull request.
 
+---
 
-![cuteblog for phyton flask blog ](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgsCk22xUyWN8InHmr9S9za70l2QXerGJiU4ESPUu47b6g3qhA7qQarbg61i03-7cMj7P8cDiDXbsGN6ZecMgc8kT2vZMJ0LCFaFIuIWKpDwYubi2_nVfZrV_ErunosUgcdRe5FYiIa41fI1sU3azj8g__fGrmtSR9r9alggHaYcd9ge7R6mva_SCc8DQ/s1349/phyton%20flask%20blog%20seo%20free%20download%20source%20code%20gratis%20(5).png)
+## 📄 License
 
-List article
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+---
 
-![cuteblog for phyton flask blog ](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWpgTrRA9V3s90_g9gZe0wI7ZzXlXxSCt7i6VJI1hdJGSlPq5Y2WC82K4o-l5dhhWB8LoRyw0EbNMV0MkT45VMFoe5R3GP4t-PQY0Js4zOkDDBmlWOhJDriu94MQucSlOD0lrZlK-DN8Ivg3alYClTtzbNM235IFBX5Dc_v3_0s7cl62tTC8qo5uBwIQ/s1349/phyton%20flask%20blog%20seo%20free%20download%20source%20code%20gratis%20(2).png)
+## 🤝 Support
 
-Create new article content
+If you need any help or have questions, feel free to reach out to us via [GitHub Issues](https://github.com/yourusername/your-repo-name/issues).
 
-![cuteblog for phyton flask blog ](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgGHWuuzNPO3Tq8tZLk6ado67nd-u7CxzY6jHSgkIdgCpFAGu3kvOUvv3HvFO3MdgsU1bmCyrgTS1juZepQzRlIk4eeY-oc2kTTZlru8eWNwHujx_OfXMBumaIPXSl3XVd-t5zMo-OlsQCuNL8CH9E-gnyLdjsz7ff8tikOB7eEWFnmjIuVFH8n1LJjww/s1349/phyton%20flask%20blog%20seo%20free%20download%20source%20code%20gratis%20(1).png)
+---
 
-Update article page
+## 🧑‍💻 Acknowledgments
 
--------------------------------
-
-Installation Documentation : 
-[https://www.hockeycomputindo.com/2022/04/phyton-flask-blog-seo-template-free.html →](https://www.hockeycomputindo.com/2022/04/phyton-flask-blog-seo-template-free.html)
-
-Test drive a demo : 
-[https://cuteflask.axcora.my.id →](https://cuteflask.axcora.my.id/)
-
-Play video : [https://youtu.be/V0hCp4SMSfw →](https://youtu.be/V0hCp4SMSfw)
-
-<a href="https://www.buymeacoffee.com/axcora"><img width="240" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIA9HMwkK8kr7uRwVNxnhXsLQsJHxQQYVSzqCAaK58OpJOiTlzbIX7eEwS_VpJ3oEG-xrmVEl2WKqGvB_o-KjyBGTbbjFHM_bN2Jce9g3FTnt2ZJViwcvB9DHPOKPEMCl7jTQRVWKPw_ETloH7_CK8Xr09SSNNx22xnfGjViwdEsGtR-yGrLmr-JUGHA/s1090/bmc-button.png"/></a>
+- Special thanks to the open-source community for providing valuable resources for this project.
+- Shoutout to [@random-contributor](https://github.com/random-contributor) for the initial template.
