@@ -1,26 +1,29 @@
----
+# Code of Conduct
 
-### **3. LICENSE (MIT License)**
+## Our Pledge
 
-```markdown
-MIT License
+We are committed to making participation in this project a harassment-free experience for everyone, regardless of experience level, background, or identity.
 
-Copyright (c) 2025 YourName
+## Expected Behavior
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+- Be respectful and constructive
+- Focus on improving the project
+- Accept constructive feedback
+- Avoid personal attacks or toxic behavior
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+## Unacceptable Behavior
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+- Harassment or discrimination
+- Insults or personal attacks
+- Trolling or disruptive behavior
+- Sharing private information without permission
+
+## Enforcement
+
+Project maintainers reserve the right to remove, edit, or reject contributions that do not align with this code of conduct.
+
+Serious violations may result in being banned from the project.
+
+## Contact
+
+For concerns, contact the maintainer directly.
