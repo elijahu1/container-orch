@@ -84,3 +84,6 @@ If you need any help or have questions, feel free to reach out to us via [GitHub
 
 - Special thanks to the open-source community for providing valuable resources for this project.
 - Shoutout to [@mesinkasir](https://github.com/mesinkasir) for the initial template.
+
+
+<!-- Security scan triggered at 2026-08-31 17:21:45 -->
